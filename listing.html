@@ -277,7 +277,7 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:3000/cars')
+    fetch('http://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/cars')
       .then(response => response.json())
       .then(data => {
         const carList = document.getElementById('car-list');

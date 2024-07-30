@@ -178,7 +178,7 @@
       const endTime = urlParams.get('end-time');
   
       if (carId) {
-        fetch(`http://localhost:3000/cars/${carId}`)
+        fetch(`http://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/cars/${carId}`)
           .then(response => response.json())
           .then(car => {
             // Set car image and details
@@ -209,6 +209,10 @@
             document.getElementById('payment-form').addEventListener('submit', (event) => {
               event.preventDefault(); // Prevent default form submission
               const formData = {
+                'firstName': urlParams.get('first-name'),
+                'lastName': urlParams.get('last-name'),
+                'phoneNumber': urlParams.get('phone'),
+                'email': urlParams.get('email'),
                 'carId': carId,
                 'startDate': urlParams.get('start-date'),
                 'startTime': urlParams.get('start-time'),
@@ -230,7 +234,7 @@
               .then(response => response.json())
               .then(data => {
                 alert('Payment successful!');
-                window.location.href = 'thankyou.html?car-id=' + carId + '&booking-id=' + data.bookingId; // Redirect with query params
+                window.location.href = 'thankyou.html?car-id=' + carId + '&booking-id=' + data; // Redirect with query params
               })
               .catch(error => console.error('Error processing payment:', error));
             });
