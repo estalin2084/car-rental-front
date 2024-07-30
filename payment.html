@@ -178,7 +178,7 @@
       const endTime = urlParams.get('end-time');
   
       if (carId) {
-        fetch(`http://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/cars/${carId}`)
+        fetch(`https://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/cars/${carId}`)
           .then(response => response.json())
           .then(car => {
             // Set car image and details
@@ -224,7 +224,7 @@
                 'finalTotal': finalTotal.toFixed(2),
               };
               console.log(formData);
-              fetch('http://localhost:3000/book', {
+              fetch('https://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/book', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

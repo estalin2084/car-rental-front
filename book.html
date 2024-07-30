@@ -214,7 +214,7 @@
       const carId = urlParams.get('car');
 
       if (carId) {
-        fetch(`http://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/cars/${carId}`)
+        fetch(`https://ec2-3-96-139-27.ca-central-1.compute.amazonaws.com:3000/cars/${carId}`)
           .then(response => response.json())
           .then(car => {
             document.getElementById('car-image').src = `images/car_${car.id}.jpg`;
